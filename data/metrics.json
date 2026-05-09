@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-09T09:59:43.788Z",
+  "generatedAt": "2026-05-09T10:48:44.949Z",
   "version": "public-snapshot-2026-05-09",
   "methodology": {
     "audienceCaveat": "多数平台不会公开跨平台去重后的观看人数。第一条 PK 条使用去重代理：短视频侧锚定全球月度社交媒体用户身份，长视频侧锚定全球互联网用户乘以月度流媒体/在线视频覆盖率。它比平台月活直接相加更接近真实人群，但仍不是平台级跨设备身份图谱。",
@@ -439,7 +439,11 @@
         "unit": "百万条",
         "confidence": "medium",
         "note": "来自 Kling AI、Pictory、Vivideo 等已披露生成量的合计口径，未包含大量封闭或未标注的生成工具。",
-        "sourceIds": ["kling168m", "pictory58m", "vivideo2026"]
+        "sourceIds": [
+          "kling168m",
+          "pictory58m",
+          "vivideo2026"
+        ]
       },
       {
         "label": "纯 AI 短视频日增",
@@ -447,7 +451,11 @@
         "unit": "百万条/日",
         "confidence": "low",
         "note": "根据公开累计生成量推算的日增代理，主要锚定 Kling AI 自上线以来生成 1.68 亿条视频这一披露。",
-        "sourceIds": ["kling168m", "pictory58m", "vivideo2026"]
+        "sourceIds": [
+          "kling168m",
+          "pictory58m",
+          "vivideo2026"
+        ]
       },
       {
         "label": "AI/真人融合长视频存量代理",
@@ -455,7 +463,10 @@
         "unit": "十亿次累计观看",
         "confidence": "medium",
         "note": "Kapwing 的 YouTube 研究发现 AI-only / AI slop 频道累计获得 630 亿次观看。这里把它作为可见度代理，不是 AI 辅助长视频的完整条数。",
-        "sourceIds": ["guardianAiSlop", "aaKapwingAiSlop"]
+        "sourceIds": [
+          "guardianAiSlop",
+          "aaKapwingAiSlop"
+        ]
       },
       {
         "label": "AI/真人融合长视频日增代理",
@@ -463,7 +474,10 @@
         "unit": "百万条/日",
         "confidence": "low",
         "note": "基于 YouTube 每日 2000 万条上传量，以及 Kapwing 在全球前 15000 个频道中识别出 278 个 AI-only 频道的比例做方向性推算。",
-        "sourceIds": ["youtube20th", "guardianAiSlop"]
+        "sourceIds": [
+          "youtube20th",
+          "guardianAiSlop"
+        ]
       }
     ],
     "ratios": [
@@ -473,7 +487,10 @@
         "human": 79.2,
         "unit": "%",
         "note": "Kapwing 新账号测试中，前 500 条 YouTube 推荐里有 104 条被判定为 AI slop。这是曝光代理，不是全平台上传占比。",
-        "sourceIds": ["aaKapwingAiSlop", "guardianAiSlop"]
+        "sourceIds": [
+          "aaKapwingAiSlop",
+          "guardianAiSlop"
+        ]
       },
       {
         "label": "长视频制作：AI 辅助 vs 纯真人流程",
@@ -481,7 +498,9 @@
         "human": 37,
         "unit": "%",
         "note": "Sprout Social 报告称 63% 的营销人员使用 AI 工具来编辑、扩展或加速视频产出。这里作为长视频生产流程的 AI 参与代理。",
-        "sourceIds": ["sproutVideo2026"]
+        "sourceIds": [
+          "sproutVideo2026"
+        ]
       },
       {
         "label": "创意人群：使用 AI vs 未使用 AI",
@@ -489,17 +508,55 @@
         "human": 13,
         "unit": "%",
         "note": "Hedra 引用 Artlist 对 6500 多名创作者的调查：87% 的创意专业人士在工作流中使用 AI 工具，66% 每周使用。",
-        "sourceIds": ["hedraAiVideo2026"]
+        "sourceIds": [
+          "hedraAiVideo2026"
+        ]
       }
     ]
   },
   "timeline": [
-    { "year": "2021", "short": 3100, "long": 3200, "aiShort": 2, "aiHybridLong": 8 },
-    { "year": "2022", "short": 4700, "long": 3550, "aiShort": 12, "aiHybridLong": 28 },
-    { "year": "2023", "short": 6500, "long": 3930, "aiShort": 48, "aiHybridLong": 90 },
-    { "year": "2024", "short": 8500, "long": 4310, "aiShort": 420, "aiHybridLong": 360 },
-    { "year": "2025", "short": 10300, "long": 4550, "aiShort": 1800, "aiHybridLong": 980 },
-    { "year": "2026", "short": 11536, "long": 4660, "aiShort": 3200, "aiHybridLong": 1650 }
+    {
+      "year": "2021",
+      "short": 3100,
+      "long": 3200,
+      "aiShort": 2,
+      "aiHybridLong": 8
+    },
+    {
+      "year": "2022",
+      "short": 4700,
+      "long": 3550,
+      "aiShort": 12,
+      "aiHybridLong": 28
+    },
+    {
+      "year": "2023",
+      "short": 6500,
+      "long": 3930,
+      "aiShort": 48,
+      "aiHybridLong": 90
+    },
+    {
+      "year": "2024",
+      "short": 8500,
+      "long": 4310,
+      "aiShort": 420,
+      "aiHybridLong": 360
+    },
+    {
+      "year": "2025",
+      "short": 10300,
+      "long": 4550,
+      "aiShort": 1800,
+      "aiHybridLong": 980
+    },
+    {
+      "year": "2026",
+      "short": 11536,
+      "long": 4660,
+      "aiShort": 3200,
+      "aiHybridLong": 1650
+    }
   ],
   "sources": [
     {
@@ -720,4 +777,3 @@
     }
   ]
 }
-
