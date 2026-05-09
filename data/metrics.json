@@ -1,0 +1,723 @@
+{
+  "generatedAt": "2026-05-09T09:59:43.788Z",
+  "version": "public-snapshot-2026-05-09",
+  "methodology": {
+    "audienceCaveat": "多数平台不会公开跨平台去重后的观看人数。第一条 PK 条使用去重代理：短视频侧锚定全球月度社交媒体用户身份，长视频侧锚定全球互联网用户乘以月度流媒体/在线视频覆盖率。它比平台月活直接相加更接近真实人群，但仍不是平台级跨设备身份图谱。",
+    "durationCaveat": "主要短视频平台没有公开按秒数分组的全球观看人数。页面里的 TikTok 秒数层级来自公开视频长度研究、平台时长限制和月度覆盖数据的模型估算，适合看方向，不适合当作精确审计值。",
+    "creatorCaveat": "创作者数量和上传量披露很不均匀。能找到官方披露的地方使用官方值；没有披露的地方会标注为模型值或第三方估算。"
+  },
+  "kpis": [
+    {
+      "label": "短视频/社交视频入口",
+      "value": 11536,
+      "unit": "百万月活/观看入口",
+      "note": "Raw, non-deduplicated sum across TikTok, YouTube Shorts, Instagram/Reels, Facebook/Reels, Snapchat, Threads, and X."
+    },
+    {
+      "label": "长视频/流媒体入口",
+      "value": 4660,
+      "unit": "百万月活/订阅/观看入口",
+      "note": "Raw, non-deduplicated sum across YouTube long-form, Bilibili, Tencent Video, iQIYI, Youku, Netflix, Prime Video, Disney+/Hulu, and HBO Max."
+    },
+    {
+      "label": "YouTube Shorts",
+      "value": 200,
+      "unit": "十亿次日均播放",
+      "note": "YouTube CEO Neal Mohan announced Shorts averaged over 200B daily views in 2025."
+    },
+    {
+      "label": "Bilibili",
+      "value": 107,
+      "unit": "分钟/日/活跃用户",
+      "note": "Bilibili Q4 2025 average daily time spent per active user."
+    }
+  ],
+  "platforms": [
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "camp": "short",
+      "region": "Global ex-China",
+      "audienceMillions": 1590,
+      "audienceMetric": "MAU / ad-reach estimate",
+      "dailyMinutes": 52,
+      "confidence": "medium",
+      "sourceIds": [
+        "datareportal2026",
+        "tiktokStatsRange"
+      ]
+    },
+    {
+      "id": "douyin",
+      "name": "Douyin 抖音",
+      "camp": "short",
+      "region": "China",
+      "audienceMillions": 936,
+      "audienceMetric": "MAU, main app, Sep 2025",
+      "dailyMinutes": 105,
+      "confidence": "medium",
+      "sourceIds": [
+        "questmobileShort2025"
+      ]
+    },
+    {
+      "id": "youtube-shorts",
+      "name": "YouTube Shorts",
+      "camp": "short",
+      "region": "Global",
+      "audienceMillions": 2000,
+      "audienceMetric": "monthly logged-in Shorts viewers",
+      "dailyViewsBillions": 200,
+      "dailyMinutes": 35,
+      "confidence": "high",
+      "sourceIds": [
+        "techcrunchShorts2b",
+        "youtubeShorts200b"
+      ]
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram / Reels",
+      "camp": "short",
+      "region": "Global",
+      "audienceMillions": 3000,
+      "audienceMetric": "Instagram MAU; Reels is a major growth driver",
+      "dailyMinutes": 33,
+      "confidence": "high",
+      "sourceIds": [
+        "instagram3b",
+        "metaReelsShares"
+      ]
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook / Reels",
+      "camp": "short",
+      "region": "Global",
+      "audienceMillions": 3000,
+      "audienceMetric": "Facebook MAU milestone",
+      "dailyMinutes": 31,
+      "confidence": "medium",
+      "sourceIds": [
+        "instagram3b"
+      ]
+    },
+    {
+      "id": "snapchat",
+      "name": "Snapchat / Spotlight",
+      "camp": "short",
+      "region": "Global",
+      "audienceMillions": 946,
+      "audienceMetric": "Snapchat MAU, Q4 2025",
+      "dailyMinutes": 30,
+      "confidence": "high",
+      "sourceIds": [
+        "snapQ42025"
+      ]
+    },
+    {
+      "id": "threads",
+      "name": "Threads",
+      "camp": "short",
+      "region": "Global",
+      "audienceMillions": 400,
+      "audienceMetric": "MAU, 2025 milestone",
+      "dailyMinutes": 12,
+      "confidence": "medium",
+      "sourceIds": [
+        "threads400m"
+      ]
+    },
+    {
+      "id": "x",
+      "name": "X / video feed",
+      "camp": "short",
+      "region": "Global",
+      "audienceMillions": 600,
+      "audienceMetric": "MAU statement",
+      "dailyMinutes": 24,
+      "confidence": "low",
+      "sourceIds": [
+        "threads400m"
+      ]
+    },
+    {
+      "id": "kuaishou",
+      "name": "Kuaishou 快手",
+      "camp": "short",
+      "region": "China",
+      "audienceMillions": 458,
+      "audienceMetric": "MAU, main app, Sep 2025",
+      "dailyMinutes": 98,
+      "confidence": "medium",
+      "sourceIds": [
+        "questmobileShort2025"
+      ]
+    },
+    {
+      "id": "youtube-long",
+      "name": "YouTube long-form",
+      "camp": "long",
+      "region": "Global",
+      "audienceMillions": 2500,
+      "audienceMetric": "MAU estimate; platform also includes Shorts",
+      "dailyMinutes": 48,
+      "confidence": "medium",
+      "sourceIds": [
+        "datareportal2025",
+        "youtube20th"
+      ]
+    },
+    {
+      "id": "bilibili",
+      "name": "Bilibili 哔哩哔哩",
+      "camp": "long",
+      "region": "China",
+      "audienceMillions": 366,
+      "audienceMetric": "MAU, Q4 2025",
+      "dailyMinutes": 107,
+      "confidence": "high",
+      "sourceIds": [
+        "bilibiliQ42025"
+      ]
+    },
+    {
+      "id": "tencent-video",
+      "name": "Tencent Video 腾讯视频",
+      "camp": "long",
+      "region": "China",
+      "audienceMillions": 350,
+      "audienceMetric": "MAU, Sep 2025",
+      "dailyMinutes": 70,
+      "confidence": "medium",
+      "sourceIds": [
+        "questmobileLong2025"
+      ]
+    },
+    {
+      "id": "iqiyi",
+      "name": "iQIYI 爱奇艺",
+      "camp": "long",
+      "region": "China",
+      "audienceMillions": 325,
+      "audienceMetric": "MAU, Sep 2025",
+      "dailyMinutes": 68,
+      "confidence": "medium",
+      "sourceIds": [
+        "questmobileLong2025",
+        "iqiyiQ42025"
+      ]
+    },
+    {
+      "id": "youku",
+      "name": "Youku 优酷",
+      "camp": "long",
+      "region": "China",
+      "audienceMillions": 174,
+      "audienceMetric": "MAU, Sep 2025",
+      "dailyMinutes": 55,
+      "confidence": "medium",
+      "sourceIds": [
+        "questmobileLong2025"
+      ]
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "camp": "long",
+      "region": "Global",
+      "audienceMillions": 325,
+      "audienceMetric": "paid subscribers milestone, Q4 2025",
+      "dailyMinutes": 64,
+      "confidence": "medium",
+      "sourceIds": [
+        "netflix325m",
+        "netflixAds190m"
+      ]
+    },
+    {
+      "id": "prime-video",
+      "name": "Prime Video",
+      "camp": "long",
+      "region": "Global",
+      "audienceMillions": 315,
+      "audienceMetric": "monthly ad-supported viewers, 2025",
+      "dailyMinutes": 46,
+      "confidence": "medium",
+      "sourceIds": [
+        "primeVideo315m"
+      ]
+    },
+    {
+      "id": "disney-hulu",
+      "name": "Disney+ / Hulu",
+      "camp": "long",
+      "region": "Global / US-heavy",
+      "audienceMillions": 183,
+      "audienceMetric": "combined paid subscribers, Jun 2025",
+      "dailyMinutes": 43,
+      "confidence": "medium",
+      "sourceIds": [
+        "disneyHulu183m"
+      ]
+    },
+    {
+      "id": "hbo-max",
+      "name": "HBO Max / Max",
+      "camp": "long",
+      "region": "Global",
+      "audienceMillions": 122,
+      "audienceMetric": "global subscribers, 2025",
+      "dailyMinutes": 38,
+      "confidence": "medium",
+      "sourceIds": [
+        "hboMax122m"
+      ]
+    }
+  ],
+  "tiktokDurationBuckets": [
+    {
+      "label": "0-15 秒",
+      "secondsMid": 10,
+      "share": 0.28,
+      "viewerEquivalentMillions": 445,
+      "completionRate": 0.84,
+      "confidence": "low"
+    },
+    {
+      "label": "16-30 秒",
+      "secondsMid": 23,
+      "share": 0.34,
+      "viewerEquivalentMillions": 541,
+      "completionRate": 0.72,
+      "confidence": "medium"
+    },
+    {
+      "label": "31-60 秒",
+      "secondsMid": 45,
+      "share": 0.24,
+      "viewerEquivalentMillions": 382,
+      "completionRate": 0.58,
+      "confidence": "medium"
+    },
+    {
+      "label": "61-180 秒",
+      "secondsMid": 110,
+      "share": 0.1,
+      "viewerEquivalentMillions": 159,
+      "completionRate": 0.42,
+      "confidence": "low"
+    },
+    {
+      "label": "3-10 分钟",
+      "secondsMid": 300,
+      "share": 0.04,
+      "viewerEquivalentMillions": 64,
+      "completionRate": 0.28,
+      "confidence": "low"
+    }
+  ],
+  "creatorSupply": [
+    {
+      "platform": "TikTok",
+      "camp": "short",
+      "creatorsMillions": 15.8,
+      "creatorMetric": "creators analyzed in creator-economy inventory",
+      "dailyUploadsMillions": 34,
+      "typicalLength": "15-60 秒",
+      "reported": false,
+      "sourceIds": [
+        "clickanalyticTikTokCreators",
+        "statspandaTikTokUploads"
+      ]
+    },
+    {
+      "platform": "YouTube Shorts",
+      "camp": "short",
+      "creatorsMillions": 12,
+      "creatorMetric": "modeled active Shorts-uploading channels",
+      "dailyUploadsMillions": 14,
+      "typicalLength": "15-60 秒",
+      "reported": false,
+      "sourceIds": [
+        "youtube20th",
+        "youtubeYPP"
+      ]
+    },
+    {
+      "platform": "Instagram Reels",
+      "camp": "short",
+      "creatorsMillions": 25,
+      "creatorMetric": "modeled creator accounts posting short video",
+      "dailyUploadsMillions": 18,
+      "typicalLength": "15-90 秒",
+      "reported": false,
+      "sourceIds": [
+        "instagram3b",
+        "metaReelsShares"
+      ]
+    },
+    {
+      "platform": "YouTube long-form",
+      "camp": "long",
+      "creatorsMillions": 60,
+      "creatorMetric": "third-party estimate of active monthly channels",
+      "dailyUploadsMillions": 6,
+      "typicalLength": "8-20 分钟",
+      "reported": false,
+      "sourceIds": [
+        "youtubeCreatorStats",
+        "youtube20th"
+      ]
+    },
+    {
+      "platform": "Bilibili",
+      "camp": "long",
+      "creatorsMillions": 4,
+      "creatorMetric": "monthly active content creators, 2025 ESG",
+      "dailyUploadsMillions": 0.8,
+      "typicalLength": "3-20 分钟",
+      "reported": true,
+      "sourceIds": [
+        "bilibiliESG2025"
+      ]
+    },
+    {
+      "platform": "Streaming studios",
+      "camp": "long",
+      "creatorsMillions": 0.08,
+      "creatorMetric": "modeled studios, channels, and professional content suppliers",
+      "dailyUploadsMillions": 0.02,
+      "typicalLength": "20-60+ 分钟",
+      "reported": false,
+      "sourceIds": [
+        "netflix325m",
+        "primeVideo315m",
+        "disneyHulu183m"
+      ]
+    }
+  ],
+  "pkBars": [
+    {
+      "label": "全球观看人群估算（去重代理）",
+      "short": 5790,
+      "long": 5612,
+      "unit": "百万，基于 DataReportal/GWI 覆盖率"
+    },
+    {
+      "label": "中国视频 App 月活入口",
+      "short": 1129,
+      "long": 799,
+      "unit": "百万"
+    },
+    {
+      "label": "创作者库存（报告+估算）",
+      "short": 52.8,
+      "long": 64.08,
+      "unit": "百万创作者"
+    },
+    {
+      "label": "每日新增视频量（报告+估算）",
+      "short": 66,
+      "long": 6.82,
+      "unit": "百万条/日"
+    },
+    {
+      "label": "典型单条时长",
+      "short": 45,
+      "long": 720,
+      "unit": "秒，中位数方向"
+    }
+  ],
+  "aiVideo": {
+    "methodNote": "目前没有任何平台或研究机构公开 TikTok、YouTube、Instagram、Facebook、X、Sora、Kling、Runway、Pika 以及企业工具中的 AI 视频全球全量普查。下面图表把公开披露、可观察样本研究和明确标注的代理估算放在一起展示。",
+    "methodNoteEn": "No platform or research group currently publishes a complete global census of AI-generated videos across TikTok, YouTube, Instagram, Facebook, X, Sora, Kling, Runway, Pika, and enterprise tools. The charts below combine public platform disclosures, observable research samples, and clearly marked proxy estimates.",
+    "volumeMetrics": [
+      {
+        "label": "纯 AI 短视频存量",
+        "value": 174,
+        "unit": "百万条",
+        "confidence": "medium",
+        "note": "来自 Kling AI、Pictory、Vivideo 等已披露生成量的合计口径，未包含大量封闭或未标注的生成工具。",
+        "sourceIds": ["kling168m", "pictory58m", "vivideo2026"]
+      },
+      {
+        "label": "纯 AI 短视频日增",
+        "value": 0.53,
+        "unit": "百万条/日",
+        "confidence": "low",
+        "note": "根据公开累计生成量推算的日增代理，主要锚定 Kling AI 自上线以来生成 1.68 亿条视频这一披露。",
+        "sourceIds": ["kling168m", "pictory58m", "vivideo2026"]
+      },
+      {
+        "label": "AI/真人融合长视频存量代理",
+        "value": 63,
+        "unit": "十亿次累计观看",
+        "confidence": "medium",
+        "note": "Kapwing 的 YouTube 研究发现 AI-only / AI slop 频道累计获得 630 亿次观看。这里把它作为可见度代理，不是 AI 辅助长视频的完整条数。",
+        "sourceIds": ["guardianAiSlop", "aaKapwingAiSlop"]
+      },
+      {
+        "label": "AI/真人融合长视频日增代理",
+        "value": 0.37,
+        "unit": "百万条/日",
+        "confidence": "low",
+        "note": "基于 YouTube 每日 2000 万条上传量，以及 Kapwing 在全球前 15000 个频道中识别出 278 个 AI-only 频道的比例做方向性推算。",
+        "sourceIds": ["youtube20th", "guardianAiSlop"]
+      }
+    ],
+    "ratios": [
+      {
+        "label": "短视频 feed：AI vs 真人/未标注",
+        "ai": 20.8,
+        "human": 79.2,
+        "unit": "%",
+        "note": "Kapwing 新账号测试中，前 500 条 YouTube 推荐里有 104 条被判定为 AI slop。这是曝光代理，不是全平台上传占比。",
+        "sourceIds": ["aaKapwingAiSlop", "guardianAiSlop"]
+      },
+      {
+        "label": "长视频制作：AI 辅助 vs 纯真人流程",
+        "ai": 63,
+        "human": 37,
+        "unit": "%",
+        "note": "Sprout Social 报告称 63% 的营销人员使用 AI 工具来编辑、扩展或加速视频产出。这里作为长视频生产流程的 AI 参与代理。",
+        "sourceIds": ["sproutVideo2026"]
+      },
+      {
+        "label": "创意人群：使用 AI vs 未使用 AI",
+        "ai": 87,
+        "human": 13,
+        "unit": "%",
+        "note": "Hedra 引用 Artlist 对 6500 多名创作者的调查：87% 的创意专业人士在工作流中使用 AI 工具，66% 每周使用。",
+        "sourceIds": ["hedraAiVideo2026"]
+      }
+    ]
+  },
+  "timeline": [
+    { "year": "2021", "short": 3100, "long": 3200, "aiShort": 2, "aiHybridLong": 8 },
+    { "year": "2022", "short": 4700, "long": 3550, "aiShort": 12, "aiHybridLong": 28 },
+    { "year": "2023", "short": 6500, "long": 3930, "aiShort": 48, "aiHybridLong": 90 },
+    { "year": "2024", "short": 8500, "long": 4310, "aiShort": 420, "aiHybridLong": 360 },
+    { "year": "2025", "short": 10300, "long": 4550, "aiShort": 1800, "aiHybridLong": 980 },
+    { "year": "2026", "short": 11536, "long": 4660, "aiShort": 3200, "aiHybridLong": 1650 }
+  ],
+  "sources": [
+    {
+      "id": "datareportal2026",
+      "name": "DataReportal Digital 2026 global social media notes",
+      "url": "https://datareportal.com/reports/digital-2026-two-in-three-people-use-social-media",
+      "summary": "Kepios/DataReportal estimates 5.66B global social media user identities and explains platform reach caveats."
+    },
+    {
+      "id": "datareportal2025",
+      "name": "DataReportal Digital 2025 Global Overview",
+      "url": "https://datareportal.com/reports/digital-2025-global-overview-report",
+      "summary": "DataReportal says YouTube was the most-used social platform at the start of 2025 and discusses TikTok time spent."
+    },
+    {
+      "id": "tiktokStatsRange",
+      "name": "Public TikTok user-count range, 2026",
+      "url": "https://www.theglobalstatistics.com/tiktok-global-users-statistics/",
+      "summary": "A third-party 2026 TikTok statistics page reports TikTok around 1.59B global MAU; other public estimates range higher."
+    },
+    {
+      "id": "youtubeShorts200b",
+      "name": "YouTube Shorts 200B daily views",
+      "url": "https://www.thewrap.com/youtube-shorts-200-billion-daily-views/",
+      "summary": "Coverage of YouTube CEO Neal Mohan's 2025 announcement that Shorts averaged 200B daily views."
+    },
+    {
+      "id": "techcrunchShorts2b",
+      "name": "Google: 2B logged-in monthly Shorts viewers",
+      "url": "https://techcrunch.com/2023/07/25/google-says-2-billion-logged-in-monthly-users-are-watching-youtube-shorts/",
+      "summary": "Google said more than 2B logged-in monthly users were watching YouTube Shorts."
+    },
+    {
+      "id": "instagram3b",
+      "name": "Instagram reaches 3B MAU",
+      "url": "https://www.cnbc.com/2025/09/24/instagram-now-has-3-billion-monthly-active-users.html",
+      "summary": "Meta CEO Mark Zuckerberg announced Instagram reached 3B monthly active users in September 2025."
+    },
+    {
+      "id": "metaReelsShares",
+      "name": "Meta Reels daily shares",
+      "url": "https://ppc.land/meta-reports-3-5-billion-daily-reels-shares-unveils-new-marketing-api-features-for-developers/",
+      "summary": "Reports Meta data that users shared 3.5B Reels daily across Facebook and Instagram."
+    },
+    {
+      "id": "threads400m",
+      "name": "Threads 400M MAU and X comparison",
+      "url": "https://techcrunch.com/2025/08/12/threads-now-has-more-than-400-million-monthly-active-users/",
+      "summary": "Threads passed 400M MAU; article cites prior X statements of 600M+ MAU."
+    },
+    {
+      "id": "snapQ42025",
+      "name": "Snap Q4 2025 financial results",
+      "url": "https://investor.snap.com/news/news-details/2026/Snap-Inc--Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx",
+      "summary": "Snap reported Snapchat reached 946M global monthly active users in Q4 2025."
+    },
+    {
+      "id": "questmobileShort2025",
+      "name": "QuestMobile China short-video MAU, Sep 2025",
+      "url": "https://finance.sina.com.cn/tech/roll/2025-11-07/doc-infwqvpr0815507.shtml",
+      "summary": "QuestMobile reported China's short-video app industry at 1.129B MAU, with Douyin main app at 936M and Kuaishou main app at 458M."
+    },
+    {
+      "id": "questmobileLong2025",
+      "name": "QuestMobile China long-video MAU, Sep 2025",
+      "url": "https://finance.sina.com.cn/tech/roll/2025-11-07/doc-infwqvpu5942901.shtml",
+      "summary": "QuestMobile reported China's online-video app industry at 799M MAU, including Tencent Video 350M, iQIYI 325M, Bilibili 228M, and Youku 174M."
+    },
+    {
+      "id": "bilibiliQ42025",
+      "name": "Bilibili Q4/FY 2025 financial results",
+      "url": "https://www.globenewswire.com/news-release/2026/03/05/3249914/0/en/Bilibili-Inc-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results.html",
+      "summary": "Bilibili reported 113M DAU, 366M MAU, and 107 minutes average daily time spent per active user in Q4 2025."
+    },
+    {
+      "id": "bilibiliESG2025",
+      "name": "Bilibili 2025 ESG report creator data",
+      "url": "https://financialreports.eu/filings/bilibili-inc-1/environmental-social-information/2026/34646733/",
+      "summary": "Bilibili reported approximately 4M monthly active content creators and 24M monthly video submissions in 2025."
+    },
+    {
+      "id": "iqiyiQ42025",
+      "name": "iQIYI Q4/FY 2025 financial results",
+      "url": "https://ir.iqiyi.com/news-releases/news-release-details/iqiyi-announces-fourth-quarter-and-fiscal-year-2025-financial",
+      "summary": "iQIYI reported FY2025 revenue, membership services revenue, and content costs; it no longer consistently discloses MAU in earnings releases."
+    },
+    {
+      "id": "netflix325m",
+      "name": "Netflix Q4 2025 subscriber milestone",
+      "url": "https://www.thewrap.com/industry-news/business/netflix-earnings-q4-2025/",
+      "summary": "Netflix reportedly crossed 325M paid subscribers in Q4 2025 after moving away from quarterly subscriber reporting."
+    },
+    {
+      "id": "netflixAds190m",
+      "name": "Netflix ads monthly active viewers",
+      "url": "https://www.thewrap.com/netflix-ad-tier-subscribers-how-many-november-2025/",
+      "summary": "Netflix said its ad-supported tier reached 190M monthly active viewers globally under its MAV metric."
+    },
+    {
+      "id": "primeVideo315m",
+      "name": "Prime Video 315M ad-supported monthly viewers",
+      "url": "https://www.advanced-television.com/2025/11/11/amazon-prime-video-ads-reaching-315m-viewers/",
+      "summary": "Amazon said Prime Video reached more than 315M average monthly ad-supported viewers globally."
+    },
+    {
+      "id": "disneyHulu183m",
+      "name": "Disney+ and Hulu combined subscribers",
+      "url": "https://www.theverge.com/news/719730/disney-plus-hulu-espn-streaming-subscriber-numbers-members-financial-reports",
+      "summary": "Disney said Disney+ and Hulu combined had 183M subscribers, with Disney+ at 128M, before ending regular subscriber disclosures."
+    },
+    {
+      "id": "hboMax122m",
+      "name": "HBO Max / Max subscribers",
+      "url": "https://www.axios.com/2025/05/14/wbd-renames-max-to-hbo-max",
+      "summary": "Axios reported Max had 122M global subscribers and targeted 150M by end-2026."
+    },
+    {
+      "id": "youtube20th",
+      "name": "YouTube 20th anniversary upload stats",
+      "url": "https://www.thewrap.com/youtube-20th-anniversary-statistics/",
+      "summary": "YouTube said more than 20B videos had been uploaded and that over 20M videos were uploaded daily around its 20th anniversary."
+    },
+    {
+      "id": "youtubeYPP",
+      "name": "YouTube Partner Program explained",
+      "url": "https://blog.youtube/creator-and-artist-stories/youtube-partner-program-explained/",
+      "summary": "YouTube explains YPP eligibility and revenue sharing for long-form and Shorts."
+    },
+    {
+      "id": "youtubeCreatorStats",
+      "name": "YouTube creator statistics",
+      "url": "https://www.demandsage.com/youtube-creator-statistics/",
+      "summary": "Third-party creator statistics estimate 115M YouTube channels and 60-65M active channels."
+    },
+    {
+      "id": "datareportal2026Mid",
+      "name": "DataReportal Digital 2026 Mid-Year Update",
+      "url": "https://datareportal.com/reports/digital-2026-mid-year-global-update-report",
+      "summary": "DataReportal reports 6.12B internet users and 5.79B global social-media user identities in April 2026, with caveats that identities may not equal unique people."
+    },
+    {
+      "id": "datareportal2026Overview",
+      "name": "DataReportal Digital 2026 Global Overview",
+      "url": "https://datareportal.com/reports/digital-2026-global-overview-report",
+      "summary": "GWI data in DataReportal says 94.6% of online adults watched online video monthly and 91.7% consumed streaming TV content monthly."
+    },
+    {
+      "id": "clickanalyticTikTokCreators",
+      "name": "ClickAnalytic TikTok Creator Statistics 2026",
+      "url": "https://www.clickanalytic.com/pt/tiktok-creator-statistics/",
+      "summary": "ClickAnalytic reported 15.8M TikTok creators analyzed in its Creator Economy Report 2026."
+    },
+    {
+      "id": "statspandaTikTokUploads",
+      "name": "StatsPanda TikTok upload estimate",
+      "url": "https://www.statspanda.com/live-counters/TikTok%20videos%20uploaded?source=counters_page",
+      "summary": "StatsPanda estimates 34M TikTok videos uploaded per day."
+    },
+    {
+      "id": "kling168m",
+      "name": "Kling AI generated-video milestone",
+      "url": "https://www.aibase.com/news/www.aibase.com/news/18086",
+      "summary": "Coverage of Poe/Kling AI data says Kling AI exceeded 22M global users and had generated over 168M videos."
+    },
+    {
+      "id": "pictory58m",
+      "name": "Pictory 2025 AI video generation",
+      "url": "https://blockchain.news/ainews/pictory-ai-reports-81-year-on-year-growth-in-ai-video-creation-5-8-million-videos-generated-in-2025",
+      "summary": "Pictory reported 5.8M AI-powered videos generated in 2025 and 183,000 hours of AI-powered video content."
+    },
+    {
+      "id": "vivideo2026",
+      "name": "Vivideo State of AI Video Creation 2026",
+      "url": "https://vivideo.ai/blog/state-of-ai-video-creation-2026",
+      "summary": "Vivideo reports 120,000+ AI videos created by 205,000+ users across 220 countries, with vertical video at 43.7% of orders."
+    },
+    {
+      "id": "opusAiVideo2026",
+      "name": "Agent Opus AI Video Statistics 2026",
+      "url": "https://www.opus.pro/blog/state-of-ai-video-creation-2026",
+      "summary": "Agent Opus analyzed 36,388 AI videos; median length was 43 seconds and p90 was 103 seconds."
+    },
+    {
+      "id": "guardianAiSlop",
+      "name": "Guardian coverage of Kapwing AI-slop study",
+      "url": "https://www.theguardian.com/technology/2025/dec/27/more-than-20-of-videos-shown-to-new-youtube-users-are-ai-slop-study-finds",
+      "summary": "Kapwing analyzed top YouTube channels and a new-user recommendation feed, finding more than 20% of recommended videos were AI slop and 278 of 15,000 top channels were AI-only."
+    },
+    {
+      "id": "aaKapwingAiSlop",
+      "name": "Anadolu Agency report on Kapwing AI-slop study",
+      "url": "https://www.aa.com.tr/en/science-technology/study-finds-over-20-of-videos-shown-to-new-youtube-users-are-ai-slop-/3783297",
+      "summary": "Reports Kapwing's finding that 104 of the first 500 recommended videos on a new YouTube account were AI slop, and AI-only channels had 63B views and 221M subscribers."
+    },
+    {
+      "id": "sproutVideo2026",
+      "name": "Sprout Social video statistics 2026",
+      "url": "https://sproutsocial.com/insights/social-media-video-statistics/",
+      "summary": "Sprout Social says 91% of businesses use video and 63% of marketers use AI tools to edit, scale, and accelerate video output."
+    },
+    {
+      "id": "hedraAiVideo2026",
+      "name": "Hedra AI video trends 2026",
+      "url": "https://www.hedra.com/blog/ai-video-trends-social-media-trends",
+      "summary": "Hedra cites an Artlist survey of 6,500+ creators across 140 countries: 87% use AI tools in workflows and 66% use them weekly."
+    },
+    {
+      "id": "sora1m",
+      "name": "OpenAI Sora app reaches 1M downloads",
+      "url": "https://techcrunch.com/2025/10/09/sora-hit-1m-downloads-faster-than-chatgpt/",
+      "summary": "TechCrunch reports Sora reached 1M downloads in under five days after launch, according to OpenAI's Sora lead."
+    },
+    {
+      "id": "metaVibes2m",
+      "name": "Meta Vibes AI feed usage",
+      "url": "https://www.aol.com/news/internal-documents-show-many-people-173025492.html",
+      "summary": "Business Insider-syndicated coverage says Meta's Vibes AI video feed had about 2M daily active users on November 9, 2025."
+    }
+  ]
+}
+

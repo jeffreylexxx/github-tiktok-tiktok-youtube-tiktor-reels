@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="短视频 vs 长视频全球观看与创作者数据互动仪表盘" />
+    <title>Short Video vs Long Video | Attention Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="hero">
+      <nav class="topbar" aria-label="Dashboard navigation">
+        <a href="#overview">Overview</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#duration">TikTok 秒数</a>
+        <a href="#creators">Creators</a>
+        <a href="#ai-video">AI Video</a>
+        <a href="#sources">Sources</a>
+      </nav>
+      <section class="hero-grid" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Daily refreshed public-data dashboard</p>
+          <h1>短视频 vs 长视频：全球注意力版图</h1>
+          <p class="lede">
+            把 TikTok、Reels、Shorts、Snapchat、Threads、X 与 YouTube、Bilibili、腾讯视频、爱奇艺、Netflix 等平台放在同一张深色仪表盘里，比较观看入口、时长层级、创作者供给与每日新增内容。
+          </p>
+          <div class="hero-actions">
+            <button class="primary" data-scroll="#pk">看阵营 PK</button>
+            <button class="ghost" data-scroll="#sources">查看来源</button>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Headline comparison">
+          <div class="dial">
+            <span id="shortShare">--%</span>
+            <small>raw reach index: short</small>
+          </div>
+          <div class="mini-bars" id="heroBars"></div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="kpi-grid" id="kpis" aria-label="Key metrics"></section>
+
+      <section class="section" id="pk">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">PK bars</p>
+            <h2>长/短视频巅峰对决</h2>
+          </div>
+          <p class="section-note">这里把每组指标压缩成左右两端的占比条：左侧代表短视频阵营，右侧代表长视频阵营。它更适合快速观察哪一边在观看入口、创作者供给、每日新增内容和典型时长上更占优势。</p>
+        </div>
+        <div class="pk-list" id="pkBars"></div>
+      </section>
+
+      <section class="section split" id="platforms">
+        <div class="section-head wide">
+          <div>
+            <p class="eyebrow">Audience map</p>
+            <h2>平台观看入口规模</h2>
+          </div>
+          <div class="segmented" role="tablist" aria-label="Platform camp filter">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="short">Short</button>
+            <button data-filter="long">Long</button>
+          </div>
+        </div>
+        <div class="chart-card large">
+          <div class="chart-title">
+            <span>Monthly audience / reach / subscriber proxy</span>
+            <small>百万，非去重</small>
+          </div>
+          <div class="svg-chart" id="platformBarChart"></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">
+            <span>Attention scatter</span>
+            <small>横轴受众，纵轴日均分钟</small>
+          </div>
+          <div class="svg-chart" id="scatterChart"></div>
+        </div>
+      </section>
+
+      <section class="section split" id="duration">
+        <div class="section-head wide">
+          <div>
+            <p class="eyebrow">TikTok duration tiers</p>
+            <h2>TikTok 短视频秒数层级</h2>
+          </div>
+          <p class="section-note">按公开研究建模：平台没有披露全球“每个秒数段有多少观看者”。这里展示的是按 TikTok MAU 和观看份额推算的等效月观看入口。</p>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">
+            <span>秒数层级观看入口</span>
+            <small>viewer-equivalent millions</small>
+          </div>
+          <div class="svg-chart" id="durationChart"></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">
+            <span>完成率热力图</span>
+            <small>高度=完成率，颜色=热度</small>
+          </div>
+          <div class="heatmap" id="durationHeatmap"></div>
+        </div>
+      </section>
+
+      <section class="section split" id="creators">
+        <div class="section-head wide">
+          <div>
+            <p class="eyebrow">Creator supply</p>
+            <h2>创作者与每日新增内容</h2>
+          </div>
+          <p class="section-note">Professional streaming studios 与 UGC 创作者不是同一种生产体系，所以这里把“报告值”和“模型值”分开标注。</p>
+        </div>
+        <div class="chart-card large creator-card">
+          <div class="chart-title">
+            <span>创作者库存</span>
+            <small>百万 creators / channels</small>
+          </div>
+          <div class="svg-chart" id="creatorChart"></div>
+        </div>
+        <div class="chart-card creator-card">
+          <div class="chart-title">
+            <span>每日新增视频量</span>
+            <small>百万条/日</small>
+          </div>
+          <div class="svg-chart" id="uploadChart"></div>
+        </div>
+      </section>
+
+      <section class="section split" id="ai-video">
+        <div class="section-head wide">
+          <div>
+            <p class="eyebrow">AI video layer</p>
+            <h2>AI 视频增量与真人内容比例</h2>
+          </div>
+          <p class="section-note" id="aiVideoNote">AI 视频仍缺少跨平台全量公开普查，所以这里把官方披露、第三方样本研究和模型代理分开呈现。</p>
+        </div>
+        <div class="chart-card large ai-card">
+          <div class="chart-title">
+            <span>AI 视频存量 / 日增代理</span>
+            <small>公开披露 + 模型估算</small>
+          </div>
+          <div class="svg-chart" id="aiVolumeChart"></div>
+        </div>
+        <div class="chart-card ai-card">
+          <div class="chart-title">
+            <span>AI vs 真人比例</span>
+            <small>样本/工作流代理</small>
+          </div>
+          <div class="ai-ratios" id="aiRatioBars"></div>
+        </div>
+      </section>
+
+      <section class="section" id="trend">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Trend</p>
+            <h2>观看入口趋势</h2>
+          </div>
+          <p class="section-note">趋势线显示，短视频入口从 2021 年后快速抬升，到 2026 年已经明显高于长视频阵营；长视频仍在增长，但斜率更平缓，说明 YouTube、流媒体和中国长视频平台的基本盘稳定，而新增注意力更多被 Shorts、Reels、TikTok、抖音等短视频入口吸收。</p>
+        </div>
+        <div class="chart-card large full">
+          <div class="svg-chart tall" id="trendChart"></div>
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Evidence</p>
+            <h2>来源与口径</h2>
+          </div>
+          <p class="section-note">页面会每日由 GitHub Actions 刷新数据文件时间戳；核心数字仍建议以来源页最新披露为准。</p>
+        </div>
+        <div class="method-box" id="methodology"></div>
+        <div class="source-grid" id="sourceGrid"></div>
+      </section>
+    </main>
+
+    <div class="tooltip" id="tooltip" role="status"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
