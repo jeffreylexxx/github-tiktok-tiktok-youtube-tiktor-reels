@@ -2,6 +2,9 @@
 
 一个可以发布到 GitHub Pages 的静态互动网页，用公开信息对比短视频与长视频平台的观看入口、时长层级、创作者供给和每日新增内容。
 
+## 在线预览
+https://jeffreylexxx.github.io/github-tiktok-tiktok-youtube-tiktor-reels/
+
 ## 本地预览
 
 直接打开 `index.html` 也可以浏览。为了让 `fetch("./data/metrics.json")` 在所有浏览器里稳定工作，建议用本地静态服务器：
